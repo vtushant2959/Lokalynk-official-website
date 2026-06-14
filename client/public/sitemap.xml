@@ -1,25 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lokalynk.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://lokalynk.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lokalynk.com/services</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://lokalynk.com/pricing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lokalynk.com/portfolio</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lokalynk.com/industries</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/case-studies</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lokalynk.com/blog</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lokalynk.com/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://lokalynk.com/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://lokalynk.com/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://lokalynk.com/location/faridabad</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/location/delhi</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/location/gurugram</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/location/noida</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/location/mumbai</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://lokalynk.com/services/seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/services/social-media-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/services/google-ads</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/services/website-development</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/services/lead-generation</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://lokalynk.com/services/whatsapp-automation</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <url>
+    <loc>https://lokalynk.com/</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/about</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/services</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/services/seo</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/services/social-media-marketing</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/services/google-ads</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/services/website-development</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/services/lead-generation</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/services/whatsapp-automation</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/services/ai-automation</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/pricing</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/portfolio</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/industries</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/case-studies</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/blog</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/contact</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/location/faridabad</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/location/delhi</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/location/gurugram</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/location/noida</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/location/mumbai</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/privacy</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalynk.com/terms</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
