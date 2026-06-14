@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+﻿import { useState, useEffect } from "react";
+import api from "../utils/api";
 import { X, CheckCircle, ArrowRight, Gift } from "lucide-react";
 
 export default function ExitIntentPopup() {
@@ -46,7 +46,7 @@ export default function ExitIntentPopup() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("/api/leads", { ...form, service: "Free Audit", source: "exit-popup" });
+      await api.post("/api/leads", { ...form, service: "Free Audit", source: "exit-popup" });
       setSubmitted(true);
     } catch {
       setSubmitted(true); // still show success
@@ -72,7 +72,7 @@ export default function ExitIntentPopup() {
 
         {/* Top Banner */}
         <div className="bg-gradient-to-r from-red-500 to-orange-500 px-6 py-3 text-center">
-          <p className="text-white font-black text-sm tracking-wide">⚡ WAIT — DON'T LEAVE YET!</p>
+          <p className="text-white font-black text-sm tracking-wide">âš¡ WAIT â€” DON'T LEAVE YET!</p>
         </div>
 
         <div className="p-8">
@@ -86,7 +86,7 @@ export default function ExitIntentPopup() {
                   Get a FREE Digital Marketing Audit
                 </h2>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Our experts will analyse your current digital presence and tell you exactly what's holding your business back — worth ₹5,000, absolutely free.
+                  Our experts will analyse your current digital presence and tell you exactly what's holding your business back â€” worth â‚¹5,000, absolutely free.
                 </p>
               </div>
 
@@ -110,7 +110,7 @@ export default function ExitIntentPopup() {
                   {loading ? "Submitting..." : <><span>Yes! Send My Free Audit</span><ArrowRight className="w-4 h-4" /></>}
                 </button>
               </form>
-              <p className="text-center text-gray-400 text-xs mt-3">🔒 No spam. We'll call you within 24 hours.</p>
+              <p className="text-center text-gray-400 text-xs mt-3">ðŸ”’ No spam. We'll call you within 24 hours.</p>
               <button onClick={dismiss} className="block text-center text-gray-400 text-xs mt-2 mx-auto hover:text-gray-600 transition-colors">
                 No thanks, I don't want free help
               </button>
@@ -137,3 +137,4 @@ export default function ExitIntentPopup() {
     </div>
   );
 }
+

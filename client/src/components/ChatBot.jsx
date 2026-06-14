@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import axios from "axios";
+﻿import { useState, useEffect, useRef } from "react";
+import api from "../utils/api";
 import { MessageCircle, X, Send, Bot, User } from "lucide-react";
 
 const SERVICES = [
@@ -9,8 +9,8 @@ const SERVICES = [
 ];
 
 const BUDGETS = [
-  "Under ₹10,000/mo", "₹10,000 – ₹25,000/mo",
-  "₹25,000 – ₹50,000/mo", "₹50,000+/mo",
+  "Under â‚¹10,000/mo", "â‚¹10,000 â€“ â‚¹25,000/mo",
+  "â‚¹25,000 â€“ â‚¹50,000/mo", "â‚¹50,000+/mo",
 ];
 
 const BOT_DELAY = 700;
@@ -23,14 +23,14 @@ function userMsg(text) {
 }
 
 const INITIAL = [
-  botMsg("Hi there! 👋 I'm Loka, your digital growth assistant.", null),
+  botMsg("Hi there! ðŸ‘‹ I'm Loka, your digital growth assistant.", null),
   botMsg("Which service are you looking for today?", SERVICES),
 ];
 
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState(INITIAL);
-  const [step, setStep] = useState("service"); // service → budget → name → phone → done
+  const [step, setStep] = useState("service"); // service â†’ budget â†’ name â†’ phone â†’ done
   const [lead, setLead] = useState({ service: "", budget: "", name: "", phone: "" });
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
@@ -61,7 +61,7 @@ export default function ChatBot() {
     if (step === "service") {
       setLead(prev => ({ ...prev, service: option }));
       setStep("budget");
-      setTimeout(() => addBotMsg("Great choice! 🎯 What's your approximate monthly budget?", BUDGETS), BOT_DELAY);
+      setTimeout(() => addBotMsg("Great choice! ðŸŽ¯ What's your approximate monthly budget?", BUDGETS), BOT_DELAY);
     } else if (step === "budget") {
       setLead(prev => ({ ...prev, budget: option }));
       setStep("name");
@@ -78,7 +78,7 @@ export default function ChatBot() {
     if (step === "name") {
       setLead(prev => ({ ...prev, name: val }));
       setStep("phone");
-      setTimeout(() => addBotMsg(`Nice to meet you, ${val}! 😊 What's the best phone number to reach you?`), BOT_DELAY);
+      setTimeout(() => addBotMsg(`Nice to meet you, ${val}! ðŸ˜Š What's the best phone number to reach you?`), BOT_DELAY);
     } else if (step === "phone") {
       const updatedLead = { ...lead, phone: val };
       setLead(updatedLead);
@@ -87,17 +87,17 @@ export default function ChatBot() {
       setTyping(true);
       setTimeout(async () => {
         try {
-          await axios.post("/api/leads", { ...updatedLead, source: "chatbot" });
+          await api.post("/api/leads", { ...updatedLead, source: "chatbot" });
         } catch { /* silent */ }
         setTyping(false);
         setMessages(prev => [...prev,
-          botMsg(`Thank you, ${lead.name}! ✅`),
+          botMsg(`Thank you, ${lead.name}! âœ…`),
         ]);
-        setTimeout(() => addBotMsg("Our expert will call you within 2 hours to discuss your " + lead.service + " requirements. 🚀"), BOT_DELAY);
-        setTimeout(() => addBotMsg("Meanwhile, you can also WhatsApp us at +91-9625046221 for instant help! 💬"), BOT_DELAY * 2);
+        setTimeout(() => addBotMsg("Our expert will call you within 2 hours to discuss your " + lead.service + " requirements. ðŸš€"), BOT_DELAY);
+        setTimeout(() => addBotMsg("Meanwhile, you can also WhatsApp us at +91-9625046221 for instant help! ðŸ’¬"), BOT_DELAY * 2);
       }, BOT_DELAY);
     } else if (step === "done") {
-      setTimeout(() => addBotMsg("Our team will be in touch shortly! You can also call us at +91-9625046221. 📞"), BOT_DELAY);
+      setTimeout(() => addBotMsg("Our team will be in touch shortly! You can also call us at +91-9625046221. ðŸ“ž"), BOT_DELAY);
     }
   };
 
@@ -127,10 +127,10 @@ export default function ChatBot() {
               <Bot className="w-5 h-5 text-white" />
             </div>
             <div>
-              <div className="text-white font-black text-sm">Loka — Growth Assistant</div>
+              <div className="text-white font-black text-sm">Loka â€” Growth Assistant</div>
               <div className="flex items-center gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-white/80 text-xs">Online now · replies instantly</span>
+                <span className="text-white/80 text-xs">Online now Â· replies instantly</span>
               </div>
             </div>
             <button onClick={() => setOpen(false)} className="ml-auto text-white/70 hover:text-white">
@@ -203,10 +203,11 @@ export default function ChatBot() {
           )}
 
           <div className="bg-gray-50 border-t border-gray-100 py-2 text-center">
-            <span className="text-[10px] text-gray-400">Powered by <span className="font-bold text-primary">Lokalynk</span> · 🔒 Your data is secure</span>
+            <span className="text-[10px] text-gray-400">Powered by <span className="font-bold text-primary">Lokalynk</span> Â· ðŸ”’ Your data is secure</span>
           </div>
         </div>
       )}
     </>
   );
 }
+

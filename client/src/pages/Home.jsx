@@ -1,6 +1,6 @@
 ﻿import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import api from "../utils/api";
 import {
   ArrowRight, MessageCircle, Phone, CheckCircle, Star, TrendingUp, Zap, Shield,
   Globe, Target, Search, Share2, BarChart3, Bot, Users, Award, Clock, HeadphonesIcon,
@@ -23,7 +23,7 @@ function HeroSection() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("/api/leads", { ...form, source: "hero-form" });
+      await api.post("/api/leads", { ...form, source: "hero-form" });
       setSubmitted(true);
     } catch {
       await new Promise(r => setTimeout(r, 600));
@@ -498,3 +498,4 @@ export default function Home() {
     </>
   );
 }
+

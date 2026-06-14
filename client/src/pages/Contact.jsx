@@ -1,5 +1,5 @@
 ﻿import { useState } from "react";
-import axios from "axios";
+import api from "../utils/api";
 import { Phone, Mail, MapPin, MessageCircle, CheckCircle, ArrowRight, Clock } from "lucide-react";
 
 const SERVICES = [
@@ -22,7 +22,7 @@ export default function Contact() {
     setLoading(true);
     setError("");
     try {
-      await axios.post("/api/leads", { ...form, source: "contact-form" });
+      await api.post("/api/leads", { ...form, source: "contact-form" });
       setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try WhatsApp or call us directly.");
@@ -176,3 +176,4 @@ export default function Contact() {
     </>
   );
 }
+

@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
-import axios from "axios";
+﻿import { useState, useEffect, useCallback } from "react";
+import api from "../utils/api";
 import {
   BarChart, Bar, LineChart, Line, PieChart, Pie, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
@@ -21,7 +21,7 @@ function Login({ onLogin }) {
     setLoading(true);
     setError("");
     try {
-      const { data } = await axios.post("/api/auth/login", { password });
+      const { data } = await api.post("/api/auth/login", { password });
       if (data.success) {
         localStorage.setItem("admin_token", data.token);
         onLogin(data.token);
@@ -78,8 +78,8 @@ export default function Admin() {
     setLoading(true);
     try {
       const [leadsRes, analyticsRes] = await Promise.all([
-        axios.get("/api/leads", { headers: authHeaders }),
-        axios.get("/api/analytics", { headers: authHeaders }),
+        api.get("/api/leads", { headers: authHeaders }),
+        api.get("/api/analytics", { headers: authHeaders }),
       ]);
       setLeads(leadsRes.data.leads || []);
       setAnalytics(analyticsRes.data);
@@ -103,7 +103,7 @@ export default function Admin() {
 
   const handleStatusUpdate = async (id) => {
     try {
-      await axios.patch(`/api/leads/${id}`, { respondedAt: new Date() }, { headers: authHeaders });
+      await api.patch(`/api/leads/${id}`, { respondedAt: new Date() }, { headers: authHeaders });
       fetchData();
     } catch {}
   };
@@ -243,9 +243,9 @@ export default function Admin() {
                       <td className="px-4 py-3 text-gray-600">{l.email}</td>
                       <td className="px-4 py-3 whitespace-nowrap"><a href={`tel:${l.phone}`} className="text-primary font-semibold">{l.phone}</a></td>
                       <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{l.service}</td>
-                      <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{l.budget || "—"}</td>
+                      <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{l.budget || "â€”"}</td>
                       <td className="px-4 py-3"><span className="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-[10px] font-semibold capitalize">{l.source || "website"}</span></td>
-                      <td className="px-4 py-3 text-gray-500 max-w-[160px] truncate">{l.message || "—"}</td>
+                      <td className="px-4 py-3 text-gray-500 max-w-[160px] truncate">{l.message || "â€”"}</td>
                       <td className="px-4 py-3 text-gray-500 whitespace-nowrap">{new Date(l.createdAt).toLocaleDateString("en-IN")}</td>
                       <td className="px-4 py-3">
                         {!l.respondedAt ? (
@@ -271,7 +271,7 @@ export default function Admin() {
           <div className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
-                <h3 className="font-black text-gray-900 text-sm mb-4">Leads — Last 30 Days</h3>
+                <h3 className="font-black text-gray-900 text-sm mb-4">Leads â€” Last 30 Days</h3>
                 <ResponsiveContainer width="100%" height={220}>
                   <LineChart data={analytics.dailyLeads || []}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -336,3 +336,4 @@ export default function Admin() {
     </div>
   );
 }
+
